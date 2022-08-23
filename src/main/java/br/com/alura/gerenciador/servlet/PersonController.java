@@ -25,7 +25,12 @@ public class PersonController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Person person = new Person("Teste Diogo", 30, 1.50);
+
+        String name = req.getParameter("name");
+        String years = req.getParameter("years");
+        String height = req.getParameter("height");
+
+        Person person = new Person(name, Integer.parseInt(years), Double.parseDouble(height));
         ps.addNewPerson(person);
     }
 }

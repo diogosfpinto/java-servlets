@@ -2,4 +2,5 @@ br/com/alura/gerenciador/servlet/OiMundo.class
 br/com/alura/gerenciador/model/Person.class
 br/com/alura/gerenciador/servlet/PersonController.class
 br/com/alura/gerenciador/services/PersonService.class
+br/com/alura/gerenciador/repositories/PersonRepository.class
 br/com/alura/gerenciador/repositories/Repository.class
