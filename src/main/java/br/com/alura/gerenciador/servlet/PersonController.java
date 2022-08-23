@@ -1,5 +1,6 @@
 package br.com.alura.gerenciador.servlet;
 
+import br.com.alura.gerenciador.model.Person;
 import br.com.alura.gerenciador.services.PersonService;
 
 import javax.servlet.ServletException;
@@ -13,12 +14,18 @@ import java.io.PrintWriter;
 @WebServlet(urlPatterns = "/persons")
 public class PersonController extends HttpServlet {
 
+    private PersonService ps = new PersonService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PersonService ps = new PersonService();
-
         PrintWriter out = resp.getWriter();
 
         out.println(ps.getAll().toString());
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Person person = new Person("Teste Diogo", 30, 1.50);
+        ps.addNewPerson(person);
     }
 }

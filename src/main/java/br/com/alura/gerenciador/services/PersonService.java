@@ -25,4 +25,8 @@ public class PersonService {
     public List<Person> getAll(){
         return persons;
     }
+
+    public void addNewPerson(Person person){
+        personRepository.add(person);
+    }
 }
