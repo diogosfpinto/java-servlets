@@ -10,19 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-//configuração
-@WebServlet(urlPatterns = "/oi")
-public class OiMundo extends HttpServlet {
+@WebServlet(urlPatterns = "/persons")
+public class PersonController extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PersonService ps = new PersonService();
 
         PrintWriter out = resp.getWriter();
-        out.println("<html>");
-        out.println("<body>");
-        out.println("<p>Oi mundo, parabens vc escreveu o primeiro servlets!</p>");
-        out.println("</body>");
-        out.println("</html>");
 
+        out.println(ps.getAll().toString());
     }
 }
