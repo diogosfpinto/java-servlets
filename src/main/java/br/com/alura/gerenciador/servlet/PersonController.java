@@ -3,6 +3,7 @@ package br.com.alura.gerenciador.servlet;
 import br.com.alura.gerenciador.model.Person;
 import br.com.alura.gerenciador.services.PersonService;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,5 +33,9 @@ public class PersonController extends HttpServlet {
 
         Person person = new Person(name, Integer.parseInt(years), Double.parseDouble(height));
         ps.addNewPerson(person);
+
+        //chamar o JSP
+        RequestDispatcher rd = req.getRequestDispatcher("/novaEmpresa.jsp");
+        rd.forward(req, resp);
     }
 }
