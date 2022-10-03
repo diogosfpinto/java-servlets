@@ -1,5 +1,5 @@
 <%
-String nomeEmpresa = "Alura";
+String nomeEmpresa = (String) request.getAttribute("person");
 System.out.println(nomeEmpresa);
 %>
 <!DOCTYPE html>

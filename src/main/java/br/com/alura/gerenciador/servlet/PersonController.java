@@ -36,6 +36,7 @@ public class PersonController extends HttpServlet {
 
         //chamar o JSP
         RequestDispatcher rd = req.getRequestDispatcher("/novaEmpresa.jsp");
+        req.setAttribute("person", person.getName());
         rd.forward(req, resp);
     }
 }
