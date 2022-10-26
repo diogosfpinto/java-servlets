@@ -21,7 +21,10 @@ public class PersonController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
 
-        out.println(ps.getAll().toString());
+//        out.println(ps.getAll().toString());
+        RequestDispatcher rd = req.getRequestDispatcher("/views/persons.jsp");
+        req.setAttribute("persons", ps.getAll());
+        rd.forward(req, resp);
     }
 
     @Override
@@ -35,8 +38,8 @@ public class PersonController extends HttpServlet {
         ps.addNewPerson(person);
 
         //chamar o JSP
-        RequestDispatcher rd = req.getRequestDispatcher("/novaEmpresa.jsp");
-        req.setAttribute("person", person.getName());
+        RequestDispatcher rd = req.getRequestDispatcher("views/newPersonCreated.jsp");
+        req.setAttribute("name", person.getName());
         rd.forward(req, resp);
     }
 }
