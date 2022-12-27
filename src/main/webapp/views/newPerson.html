@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+    <p th:text="#home.welcome">Cadastro de nova pessoa</p>
+
     <form action="/java-servlets-1.0/persons" method="POST">
         <label for="fname">Name:</label><br>
         <input type="text" id="fname" name="name"/>

@@ -12,8 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
 @WebServlet(urlPatterns = "/persons")
 public class PersonController extends HttpServlet {
+
+    public PersonController(){
+        System.out.println("Instancia criada");
+    }
 
     private PersonService ps = new PersonService();
 

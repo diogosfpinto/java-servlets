@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <table border ="1" width="500" align="center">
+            <thead bgcolor="00FF7F">
+                <tr>
+                    <th><b>Name</b></th>
+                    <th><b>Years</b></th>
+                    <th><b>Height</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each=" person : ${people}">
+                    <td th:text="${person.name}">Test</td>
+                    <td th:text="${person.years}">Test</td>
+                    <td th:text="${person.height}">Test</td>
+                </tr>
+            </tbody>
+            <tr ></tr>
+        </table>
+        <a href="http://localhost:8080/java-servlets-1.0/views/newPerson.html"><button>Cadastrar novo item</button></a>
+
+    </body>
+</html>
